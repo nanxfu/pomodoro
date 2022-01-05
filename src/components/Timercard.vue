@@ -52,18 +52,20 @@ let Timer;
 let SetTimer = () => {
     Hiddisplay.value = !Hiddisplay.value
 }
-Timer = Accuracytimer(70, (remaintime, deltapeersec, totalsec) => {
+Timer = Accuracytimer('backward',(remaintime) => {
     Timercount.remaintime = remaintime
-    Timercount.deltapeersec = deltapeersec
-    Timercount.totalsec = totalsec
     Timercount.remainsec = remaintime % 60
     Timercount.remainmin = Math.floor(remaintime / 60)
-})
+},70)
 Timer.start()
 </script>
 
 <style>
 .number {
     font-family: "MTC 7 Segment";
+}
+@font-face {
+    font-family: "MTC 7 Segment";
+    src: url('../assets/MTC-7-Segment.TTF');
 }
 </style>
