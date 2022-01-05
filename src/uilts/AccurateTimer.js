@@ -52,9 +52,8 @@ function fixTimeDeltaPeerSecond(starttime, elapsed) {
     let preTime = new Date().getTime()
     let Difference = preTime - starttime - elapsed * 1000
     console.log("Difference", Difference, 'preTime - starttime', preTime - starttime, 'elapsed*1000', elapsed * 1000)
-    if (Difference == 0) {
-        return 1000
-    } else if (Difference > 0) {
+
+    if(Difference > 0){
         return 1000 - Difference < 0 ? 0 : 1000 - Difference
     }
     return 1000
